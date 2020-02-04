@@ -1,5 +1,6 @@
 import React from "react";
 import ReactMarkdown from "react-markdown"
+import avatar from "./avatar.jpg"
 import styled from "styled-components"
 
 const Description = styled.div`
@@ -70,7 +71,7 @@ LinkedIn](https://www.linkedin.com/in/amoschan).
   return (
     <div className="container mx-auto px-2 max-w-xl text-gray-700">
       <div className="flex flex-row items-center mt-5 mb-10">
-        <img src="/static/avatar.jpg" className="w-20 h-20 rounded-full" />
+        <img src={avatar} className="w-20 h-20 rounded-full" />
         <div className="flex flex-col text-xl hover:text-indigo-500 ml-4 align-center">
           <div>Hey! 👋</div>
           <div>I&apos;m <span className="font-semibold">Amos Chan</span>.</div>
