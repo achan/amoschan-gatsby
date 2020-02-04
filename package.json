@@ -13,7 +13,9 @@
     "prop-types": "^15.7",
     "react": "^16.12",
     "react-dom": "^16.12",
-    "react-helmet": "^5.2"
+    "react-helmet": "^5.2",
+    "react-markdown": "^4.3.1",
+    "styled-components": "^5.0.1"
   },
   "keywords": [
     "gatsby",
@@ -29,7 +31,8 @@
     "fix:lint": "eslint --ext .jsx --ext .js . --fix",
     "fix:prettier": "prettier --write \"**/*.{css,js,jsx,json,md}\"",
     "fix": "npm run fix:lint && npm run fix:prettier",
-    "build": "gatsby build",
+    "build": "npm run build:style gatsby build",
+    "build:style": "tailwind build src/css/style.css -c tailwind.config.js -o src/css/tailwind.css",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
