@@ -1,8 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Tailwind`,
-    description: `Gatsby starter styled with Tailwind`,
-    author: `@taylorbryant`
+    title: "amoschan.com",
+    description: "iOS and Web consultant from Montreal, Quebec",
+    author: "Amos Chan",
+    siteUrl: "https://amoschan.com",
+    social: [
+      { name: "twitter", url: "https://twitter.com/amoschan" },
+      { name: "github", url: "https://github.com/achan" },
+      { name: "linkedin", url: "http://www.linkedin.com/in/amoschan" }
+    ]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -3,12 +3,24 @@
 
 @import url('https://rsms.me/inter/inter.css');
 
+body {
+  @apply bg-indigo-400
+}
+
 a {
   @apply text-indigo-700 border-b border-indigo-400 border-dotted;
 }
 
 a:hover {
   @apply text-indigo-500;
+}
+
+.-rotate-5 {
+  transform: rotate(-5deg);
+}
+
+.rotate-5 {
+  transform: rotate(5deg);
 }
 
 @tailwind components;
