@@ -27,16 +27,20 @@ const Footer = () => {
   const { siteMetadata: { title, social, siteUrl } } = site
 
   return (
-    <div className="bg-indigo-400 border-indigo-600 border-t-2 mt-32 pt-10 pb-2">
+    <div className="mt-32 pt-10 pb-2">
       <div className="font-sans container mx-auto px-2 max-w-xl md:max-w-2xl lg:max-w-3xl">
-        <a className="tracking-widest text-sm uppercase" href={siteUrl}>{title}</a>
-        <nav className="text-xl text-gray-100">
+        <a className="text-gray-400 hover:text-gray-500 border-0 tracking-widest text-sm uppercase" href={siteUrl}>{title}</a>
+        <nav className="text-xl">
           <ul>
-            <li className="inline mr-3 my-6"><a href={`${siteUrl}/posts`}><IoIosJournal className="inline" /></a></li>
+            <li className="inline mr-3 my-6">
+              <a className="text-gray-400 hover:text-gray-500 border-0" href={`${siteUrl}/posts`}>
+                <IoIosJournal className="inline" />
+              </a>
+            </li>
             {
               social.map((s, i) => {
                 return (
-                  <li key={i} className="inline mx-3 my-6"><a href={s.url}>{Icon[s.name]}</a></li>
+                  <li key={i} className="inline mx-3 my-6"><a className="text-gray-400 hover:text-gray-500 border-0" href={s.url}>{Icon[s.name]}</a></li>
                 )
               })
             }
