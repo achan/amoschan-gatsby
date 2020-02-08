@@ -17,8 +17,7 @@
     "react-helmet": "^5.2",
     "react-icons": "^3.9.0",
     "react-markdown": "^4.3",
-    "rehype-react": "^4.0",
-    "styled-components": "^5.0"
+    "rehype-react": "^4.0"
   },
   "keywords": [
     "gatsby",

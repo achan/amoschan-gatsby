@@ -1,10 +1,14 @@
 import Footer from "./footer"
+import Header from "./header"
 import React from "react"
 
 const Layout = ({ data, children }) => {
   return (
     <div className="bg-gray-100">
-      {children}
+      <Header />
+      <div>
+        {children}
+      </div>
       <Footer />
     </div>
   )
