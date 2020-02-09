@@ -5,7 +5,7 @@ import { useMarkdownAst } from "../common/use-markdown-ast"
 
 const Title = ({ url, children }) => {
   if (url) {
-    return <Link to={url}>{children}</Link>
+    return <a href={url}>{children}</a>
   }
 
   return children
