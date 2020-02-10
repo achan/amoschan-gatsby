@@ -1,6 +1,12 @@
 const path = require("path")
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
+  const blogPages = await buildBlog({ graphql })
+  blogPages.forEach(page => createPage(page))
+}
+
+const buildBlog = async ({ graphql }) => {
   const markdownBlogTemplate = path.resolve("./src/templates/markdown-blog.js")
   const result = await graphql(`
     {
@@ -24,11 +30,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    createPage({
+  return result.data.allMarkdownRemark.edges.map(({ node }) => (
+    {
       path: node.frontmatter.path,
       component: markdownBlogTemplate,
-    })
-  })
+    }
+  ))
 }
 
