@@ -2,7 +2,7 @@
 title: Some thoughts on TDD and refactoring
 timestamp: 2014-01-26T21:28:32-04:00
 tags: tdd, refactoring
-path: "/2014/01/26/tdd-and-refactoring"
+path: /2014/01/26/some-thoughts-on-tdd-and-refactoring
 ---
 
 About a year and a half ago, I decided to dive head-first into test-driven
