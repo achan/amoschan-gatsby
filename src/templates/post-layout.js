@@ -4,9 +4,9 @@ import React from "react"
 
 const Layout = ({ data, children }) => {
   return (
-    <div className="bg-gray-100">
+    <div className="min-h-screen flex flex-col bg-gray-100">
       <Header />
-      <div>
+      <div className="flex-grow">
         {children}
       </div>
       <Footer />
