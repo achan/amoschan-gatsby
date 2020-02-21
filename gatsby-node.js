@@ -15,7 +15,6 @@ const buildBlog = async ({ graphql, reporter }) => {
     {
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___timestamp] }
-        limit: 1000
       ) {
         edges {
           node {
@@ -32,24 +31,14 @@ const buildBlog = async ({ graphql, reporter }) => {
 
   if (result.errors) {
     reporter.panicOnBuild("Error while running GraphQL query")
-    console.log({ errors: result.errors })
     return
   }
 
   return result.data.allMarkdownRemark.edges.map(({ node }) => (
     {
-      path: buildBlogPath(node.frontmatter),
+      path: node.frontmatter.path,
       component: markdownBlogTemplate,
     }
   ))
-}
-
-const buildBlogPath = ({ path, timestamp, title }) => {
-  console.log({ path, timestamp })
-  const format = `\/YYYY\/MM\/DD\/[${slugify((title || "").toLowerCase())}]`
-  const blogPath = path || moment(timestamp).tz("America/New_York").format(format)
-  console.log({ path: blogPath })
-
-  return blogPath
 }
 
