@@ -11,7 +11,7 @@ function IndexPage() {
   const renderers = { paragraph: Paragraph }
 
   return (
-    <div className="bg-gray-100 border-t-2 border-indigo-500">
+    <div className="border-t-2 border-indigo-500 bg-white">
       <div className="font-sans container mx-auto px-2 max-w-xl md:max-w-2xl lg:max-w-3xl text-gray-700">
         <div className="flex flex-row items-center pt-5 mb-10">
           <img src={avatar} className="w-20 h-20 rounded-full" />
