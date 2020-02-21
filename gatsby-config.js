@@ -1,11 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Tailwind`,
-    description: `Gatsby starter styled with Tailwind`,
-    author: `@taylorbryant`
+    title: "amoschan.com",
+    description: "iOS and Web consultant from Montreal, Quebec",
+    author: "Amos Chan",
+    siteUrl: "https://amoschan.com",
+    social: [
+      { name: "twitter", url: "https://twitter.com/amoschan" },
+      { name: "github", url: "https://github.com/achan" },
+      { name: "linkedin", url: "http://www.linkedin.com/in/amoschan" }
+    ]
   },
   plugins: [
-    "gatsby-plugin-eslint",
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -36,6 +41,14 @@ module.exports = {
         purgeOnly: [`src/css/style.css`]
       }
     },
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "markdown-pages",
+        path: `${__dirname}/src/markdown-pages`,
+      }
+    },
+    `gatsby-transformer-remark`
   ]
 };

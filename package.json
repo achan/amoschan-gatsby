@@ -10,12 +10,19 @@
     "gatsby-plugin-postcss": "^2.1",
     "gatsby-plugin-purgecss": "^4.0",
     "gatsby-plugin-react-helmet": "^3.1",
-    "prop-types": "^15.7",
+    "gatsby-remark-prismjs": "^3.3.31",
+    "gatsby-source-filesystem": "^2.1",
+    "gatsby-transformer-remark": "^2.6.53",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27",
+    "prismjs": "^1.19.0",
     "react": "^16.12",
     "react-dom": "^16.12",
     "react-helmet": "^5.2",
-    "react-markdown": "^4.3.1",
-    "styled-components": "^5.0.1"
+    "react-icons": "^3.9.0",
+    "react-markdown": "^4.3",
+    "rehype-react": "^4.0",
+    "slugify": "^1.3.6"
   },
   "keywords": [
     "gatsby",
