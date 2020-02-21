@@ -33,7 +33,7 @@ const Template = ({ data }) => {
 
   return (
     <Layout>
-      <div className="font-sans container mx-auto px-2 max-w-xl md:max-w-2xl lg:max-w-3xl text-gray-700">
+      <div className="font-sans container mx-auto px-2 max-w-xl md:max-w-2xl lg:max-w-3xl text-gray-700 sm:mt-12 sm:mb-24">
         <h1 className="text-lg sm:text-2xl md:text-3xl font-bold mb-6">Tag Index</h1>
         <ul>
           {
