@@ -26,7 +26,7 @@ const BlogPost = ({ className, post }) => {
             .map(t => {
               return (
                 <Link
-                  to={`/tag/${t}`}
+                  to={`/tags#${t}`}
                   className="bg-gray-400 text-white text-xs md:text-sm mr-2 px-2 py-1 rounded-full tracking-wide hover:text-white hover:bg-gray-500 border-0" key={t}>
                   #{t}
                 </Link>

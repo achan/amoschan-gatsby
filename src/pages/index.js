@@ -2,6 +2,7 @@ import Footer from "../templates/footer"
 import React from "react";
 import ReactMarkdown from "react-markdown"
 import avatar from "./avatar.jpg"
+import { Link } from "gatsby"
 
 const Paragraph = ({ children }) => <p className="mb-3 md:mb-6 lg:mb-8 md:text-lg lg:text-xl last:mb-0">{children}</p>
 
@@ -38,7 +39,7 @@ function IndexPage() {
                 <div className="text-sm md:text-base text-gray-500 tracking-wide">{job.tenure}</div>
                 <ReactMarkdown className="mt-2 md:text-lg" source={job.description} escapeHtml={false} renderers={renderers} />
                 <div className="mt-2">
-                  {job.tags.map(t => <span className="bg-gray-400 text-white text-xs md:text-sm mr-2 px-2 py-1 rounded-full tracking-wide" key={t}>#{t}</span>)}
+                  {job.tags.map(t => <Link to={`/tags#${t}`} className="bg-gray-400 text-white text-xs md:text-sm mr-2 px-2 py-1 rounded-full tracking-wide border-b-0" key={t}>#{t}</Link>)}
                 </div>
               </div>
             )
