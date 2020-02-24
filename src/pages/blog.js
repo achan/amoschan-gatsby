@@ -3,7 +3,7 @@ import Layout from "../templates/post-layout"
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { useMarkdownAst } from "../common/use-markdown-ast"
-import { Paragraph, Pre, Code, BlockQuote } from "../templates/markdown-blog"
+import { Header2, UnorderedList, ListItem, Paragraph, Pre, Code, BlockQuote } from "../templates/markdown-blog"
 
 const Title = ({ url, children }) => {
   if (url) {
@@ -14,7 +14,7 @@ const Title = ({ url, children }) => {
 }
 
 const Template = ({ data }) => {
-  const renderAst = useMarkdownAst({ components: { p: Paragraph, pre: Pre, blockquote: BlockQuote, code: Code } })
+  const renderAst = useMarkdownAst({ components: { ul: UnorderedList, li: ListItem, h2: Header2, p: Paragraph, pre: Pre, blockquote: BlockQuote, code: Code } })
   const posts = data.allMarkdownRemark.edges.map(({ node: { frontmatter, htmlAst } }) => ({
     link: frontmatter.external_link,
     title: frontmatter.title,

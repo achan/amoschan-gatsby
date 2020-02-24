@@ -7,10 +7,10 @@ import { useMarkdownAst } from "../common/use-markdown-ast"
 export const Paragraph = ({ children }) => <p className="mb-3 last:mb-0 md:mb-6 lg:mb-8 md:text-lg lg:text-xl">{children}</p>
 export const Pre = ({ children }) => <pre className="bg-gray-900 p-4 -mx-2 overflow-x-scroll mb-3 md:mb-6 lg:mb-8 text-sm md:text-base lg:text-lg">{children}</pre>
 export const Code = ({ children }) => <code className="px-2 py-1 font-mono">{children}</code>
-export const BlockQuote = ({ children }) => <blockquote className="border-dashed border-l-2 border-indigo-200 p-2 md:pl-6 mb-3 md:mb-6 lg:mb-8">{children}</blockquote>
+export const BlockQuote = ({ children }) => <blockquote className="border-dashed border-l-2 border-indigo-200 p-2 pl-6 md:pl-6 mb-3 md:mb-6 lg:mb-8">{children}</blockquote>
 export const Header2 = ({ children }) => <h2 className="md:text-2xl lg:text-3xl font-semibold">{children}</h2>
-export const UnorderedList = ({ children }) => <ul className="list-disc list-outside mb-3 last:mb-0 md:mb-6 lg:mb-8 md:text-lg lg:text-xl">{children}</ul>
-export const ListItem = ({ children }) => <li className="">{children}</li>
+export const UnorderedList = ({ children }) => <ul className="list-disc list-inside sm:list-outside mb-3 last:mb-0 md:mb-6 lg:mb-8 md:text-lg lg:text-xl">{children}</ul>
+export const ListItem = ({ children }) => <li className="mb-2 sm:mb-1 last:mb-0 md:mb-2 lg:mb-3">{children}</li>
 
 const Template = ({ data }) => {
   const { markdownRemark } = data
