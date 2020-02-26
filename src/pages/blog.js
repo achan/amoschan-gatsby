@@ -1,9 +1,10 @@
 import BlogPost from "../components/blog-post"
 import Layout from "../templates/post-layout"
 import React from "react"
+import { Header2, UnorderedList, ListItem, Paragraph, Pre, Code, BlockQuote } from "../templates/markdown-blog"
+import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 import { useMarkdownAst } from "../common/use-markdown-ast"
-import { Header2, UnorderedList, ListItem, Paragraph, Pre, Code, BlockQuote } from "../templates/markdown-blog"
 
 const Title = ({ url, children }) => {
   if (url) {
@@ -24,8 +25,11 @@ const Template = ({ data }) => {
     html: renderAst(htmlAst)
   }))
 
+  const { author, description } = data.site.siteMetadata
+
   return (
     <Layout>
+      <Helmet title={`Blog ≪ ${author} ≪ ${description}`} />
       <div className="font-sans container mx-auto max-w-xl md:max-w-2xl lg:max-w-3xl text-gray-700">
         {
           posts.map(p => {
@@ -45,6 +49,13 @@ export default Template
 
 export const pageQuery = graphql`
   query blogs {
+    site {
+      siteMetadata {
+        author
+        description
+      }
+    }
+
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___timestamp] }
       limit: 10

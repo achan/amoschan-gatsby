@@ -1,6 +1,7 @@
 import BlogPost from "../components/blog-post"
 import Layout from "../templates/post-layout"
 import React from "react"
+import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 import { useMarkdownAst } from "../common/use-markdown-ast"
 
@@ -13,6 +14,7 @@ const Title = ({ url, children }) => {
 }
 
 const Template = ({ data }) => {
+  const { author, description } = data.site.siteMetadata
   const posts = data.allMarkdownRemark.edges.map(({ node: { frontmatter } }) => ({
     title: frontmatter.title,
     path: frontmatter.path,
@@ -33,6 +35,7 @@ const Template = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet title={`Tags ≪ ${author} ≪ ${description}`} />
       <div className="font-sans container mx-auto px-2 max-w-xl md:max-w-2xl lg:max-w-3xl text-gray-700 sm:mt-12 sm:mb-24">
         <h1 className="text-lg sm:text-2xl md:text-3xl font-bold mb-6">Tag Index</h1>
         <ul>
@@ -61,6 +64,13 @@ export default Template
 
 export const pageQuery = graphql`
   query tags {
+    site {
+      siteMetadata {
+        author
+        description
+      }
+    }
+
     allMarkdownRemark {
       edges {
         node {

@@ -1,6 +1,7 @@
 import BlogPost from "../components/blog-post"
 import Layout from "./post-layout"
 import React from "react"
+import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 import { useMarkdownAst } from "../common/use-markdown-ast"
 
@@ -13,6 +14,7 @@ export const UnorderedList = ({ children }) => <ul className="list-disc list-ins
 export const ListItem = ({ children }) => <li className="mb-2 sm:mb-1 last:mb-0 md:mb-2 lg:mb-3">{children}</li>
 
 const Template = ({ data }) => {
+  const { author, description } = data.site.siteMetadata
   const { markdownRemark } = data
   const { frontmatter, htmlAst } = markdownRemark
   const renderAst = useMarkdownAst({ components: { ul: UnorderedList, li: ListItem, h2: Header2, p: Paragraph, pre: Pre, blockquote: BlockQuote, code: Code } })
@@ -28,6 +30,7 @@ const Template = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet title={`${post.title} ≪ ${author} ≪ ${description}`} />
       <div className="sm:mt-12 sm:mb-24">
         <BlogPost post={post} />
       </div>
@@ -39,6 +42,13 @@ export default Template
 
 export const pageQuery = graphql`
   query($path: String!) {
+    site {
+      siteMetadata {
+        author
+        description
+      }
+    }
+
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       htmlAst
       frontmatter {

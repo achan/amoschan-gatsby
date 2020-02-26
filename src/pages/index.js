@@ -2,16 +2,19 @@ import Footer from "../templates/footer"
 import React from "react";
 import ReactMarkdown from "react-markdown"
 import avatar from "./avatar.jpg"
+import { Helmet } from "react-helmet"
 import { Link } from "gatsby"
 
 const Paragraph = ({ children }) => <p className="mb-3 md:mb-6 lg:mb-8 md:text-lg lg:text-xl last:mb-0">{children}</p>
 
-function IndexPage() {
-  const { overview, experience, footer } = data
+function IndexPage({ data }) {
+  const { overview, experience, footer } = localData
   const renderers = { paragraph: Paragraph }
+  const { author, description } = data.site.siteMetadata
 
   return (
     <div className="border-t-2 border-indigo-500 bg-white">
+      <Helmet title={`${author} ≪ ${description}`} />
       <div className="font-sans container mx-auto px-2 max-w-xl md:max-w-2xl lg:max-w-3xl text-gray-700">
         <div className="flex flex-row items-center pt-5 mb-10">
           <img src={avatar} className="w-20 h-20 rounded-full" />
@@ -62,7 +65,7 @@ function IndexPage() {
   );
 }
 
-const data = {
+const localData = {
   overview: {
     title: "Hire Me",
     body: `
@@ -117,3 +120,15 @@ LinkedIn](https://www.linkedin.com/in/amoschan).
 }
 
 export default IndexPage;
+
+export const pageQuery = graphql`
+  query homepage {
+    site {
+      siteMetadata {
+        author
+        description
+      }
+    }
+  }
+`
+
