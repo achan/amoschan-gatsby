@@ -92,7 +92,7 @@ I lead the development of their iOS app, web app and help out on their backend.
       company: "Code Academy",
       title: "Consultant",
       tags: ["react", "rubyonrails", "graphql"],
-      tenure: "2018 - present",
+      tenure: "2018 - 2020",
       description: `Working with a young entrepreneur, we’re building an <abbr title="Learning Management System">LMS</abbr> that’s primarily focused on the developing world.`
     },
     {
