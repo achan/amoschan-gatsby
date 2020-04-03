@@ -78,14 +78,14 @@ available for 10-15 hours per week.**
   experience: [
     {
       company: "Flexday",
-      title: "Consultant",
+      title: "Engineering Team Lead (Contract)",
       tags: ["swift", "react", "firebase"],
       tenure: "2018 - present",
       description: `
 Remote work is the future and Flexday provides its members with a network of
 [unique, fully-equipped coworking spaces](https://www.theglobeandmail.com/canada/toronto/article-toronto-startup-flexday-partners-with-restaurants-to-turn-empty-tables/).
 
-I lead the development of their iOS app, web app and help out on their backend.
+I manage the development of their iOS, Android and web products to ensure that they're well-tested and developed with quality.
 `
     },
     {
@@ -93,7 +93,7 @@ I lead the development of their iOS app, web app and help out on their backend.
       title: "Consultant",
       tags: ["react", "rubyonrails", "graphql"],
       tenure: "2018 - 2020",
-      description: `Working with a young entrepreneur, we’re building an <abbr title="Learning Management System">LMS</abbr> that’s primarily focused on the developing world.`
+      description: `Worked with a young entrepreneur to build an <abbr title="Learning Management System">LMS</abbr> that’s primarily focused on the developing world.`
     },
     {
       company: "VarageSale",
