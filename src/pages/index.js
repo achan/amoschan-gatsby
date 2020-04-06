@@ -72,7 +72,7 @@ const localData = {
 I help small companies and entrepreneurs build their products from the
 ground up.  From feature development to leading a team of developers, I
 work with my clients to make their vision a reality. **Currently only
-available for 10-15 hours per week.**
+available for 20-25 hours per week.**
 `
   },
   experience: [
