@@ -8,7 +8,7 @@ import { Link } from "gatsby"
 const Paragraph = ({ children }) => <p className="mb-3 md:mb-6 lg:mb-8 md:text-lg lg:text-xl last:mb-0">{children}</p>
 
 function IndexPage({ data }) {
-  const { overview, experience, footer } = localData
+  const { overview, experience, faqs, footer } = localData
   const renderers = { paragraph: Paragraph }
   const { author, description } = data.site.siteMetadata
 
@@ -58,6 +58,22 @@ function IndexPage({ data }) {
           })}
           <ReactMarkdown className="my-10" source={footer} escapeHtml={false} />
         </div>
+        <div className="mt-20">
+          <a name="faq" />
+          <h2 className="bg-indigo-200 text-gray-100 text-xs px-2 py-1 rounded uppercase tracking-wider inline">
+            FAQ
+          </h2>
+          {faqs.map((faq, index) => {
+            return (
+              <div key={index} className="mb-10 last:mb-10">
+                <h3 className="mt-2 font-bold text-xl md:text-2xl">
+                  {faq.question}
+                </h3>
+                <ReactMarkdown className="mt-2 md:text-lg" source={faq.answer} escapeHtml={false} renderers={renderers} />
+              </div>
+            )
+          })}
+        </div>
         <div className="my-20 text-4xl text-center">👨‍💻</div>
       </div>
       <Footer />
@@ -71,10 +87,26 @@ const localData = {
     body: `
 I help small companies and entrepreneurs build their products from the
 ground up.  From feature development to leading a team of developers, I
-work with my clients to make their vision a reality. **Currently only
-available for 20-25 hours per week.**
+work with my clients to make their vision a reality. [Currently only
+available at a part-time capacity.](#faq)
 `
   },
+  faqs: [
+    {
+      question: "Wait, you're only available part-time? I'm looking for a full-time developer.",
+      answer: `
+Deadlines are only as realistic as the communication allows. What you'll get
+from me is a dependable developer that will ask the important questions and
+give you a clear understanding of where the development currently stands.
+
+With thorough communcation, automated tests and continuous integration, I plan
+to make those hours*—your money—*count. Though I'm working for you part-time, I
+am working full-time and my line of communcation is available to you full-time.
+You have the benefit of asking me questions on a full-time basis but
+"clocking me out" when that communication is over.
+`
+    }
+  ],
   experience: [
     {
       company: "Flexday",
