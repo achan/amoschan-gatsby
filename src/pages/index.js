@@ -109,9 +109,20 @@ You have the benefit of asking me questions on a full-time basis but
   ],
   experience: [
     {
+      company: "SmileSnap",
+      title: "Full-Stack Developer (Contract)",
+      tags: ["rubyonrails", "react", "webrtc"],
+      tenure: "2020 - present",
+      description: `
+Virtual consultation is a must in this post-pandemic world. I help build
+SmileSnap's video consultation product, dashboard and patient portal.
+`
+
+    },
+    {
       company: "Flexday",
       title: "Engineering Team Lead (Contract)",
-      tags: ["swift", "react", "firebase"],
+      tags: ["swift", "react", "firebase", "reactnative"],
       tenure: "2018 - present",
       description: `
 Remote work is the future and Flexday provides its members with a network of
@@ -119,13 +130,6 @@ Remote work is the future and Flexday provides its members with a network of
 
 I manage the development of their iOS, Android and web products to ensure that they're well-tested and developed with quality.
 `
-    },
-    {
-      company: "Code Academy",
-      title: "Consultant",
-      tags: ["react", "rubyonrails", "graphql"],
-      tenure: "2018 - 2020",
-      description: `Worked with a young entrepreneur to build an <abbr title="Learning Management System">LMS</abbr> that’s primarily focused on the developing world.`
     },
     {
       company: "VarageSale",
