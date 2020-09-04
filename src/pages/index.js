@@ -31,7 +31,7 @@ function IndexPage({ data }) {
         </div>
         <div className="mt-20">
           <h2 className="bg-indigo-300 text-gray-100 text-xs px-2 py-1 rounded uppercase tracking-wider inline">
-            Past Experience
+            Experience
           </h2>
           {experience.map((job, index) => {
             return (
