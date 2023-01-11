@@ -12,7 +12,7 @@
     "gatsby-plugin-react-helmet": "^3.1",
     "gatsby-remark-prismjs": "^3.3.31",
     "gatsby-source-filesystem": "^2.1",
-    "gatsby-transformer-remark": "^2.6.53",
+    "gatsby-transformer-remark": "^5.25.1",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.27",
     "prismjs": "^1.19.0",
